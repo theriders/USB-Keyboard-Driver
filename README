@@ -1,0 +1,17 @@
+Rohan Malik - Assignment 6b
+
+1)
+make -C /usr/src/linux-headers-$(uname -r) M=$PWD modules
+
+2)
+sudo insmod usbkbd.ko
+
+3)
+run echo commands to unbind from usbhid and bind to usbkbd
+
+example (as root):
+$ echo -n "1-2:1.0" > /sys/bus/usb/drivers/usbhid/unbind
+$ echo -n "1-2:1.0" > /sys/bus/usb/drivers/usbkbd/bind
+
+4)
+test keyboard and watch dmesg for MODE print statements
